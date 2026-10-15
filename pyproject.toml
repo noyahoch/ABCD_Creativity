@@ -1,0 +1,68 @@
+[project]
+name = "bridge-steering"
+version = "1.0.0"
+description = "Bridging Creativity in LLMs: Mechanism-Driven Creative Leaps"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10,<3.13"
+dependencies = [
+	"torch>=2.2.0",
+	# Keep transformers 4.x: vLLM 0.11 expects tokenizer.all_special_tokens_extended (removed in 5.x)
+	"transformers>=4.40.0,<5",
+	"accelerate>=0.20.0",
+	"sentence-transformers>=2.0.0",
+	"datasets>=3.0.0",
+	"numpy>=1.24.0",
+	"pandas>=2.0.0",
+	"pyarrow>=14.0",
+	"openpyxl>=3.0.0",
+	"pyyaml>=6.0",
+	"tqdm>=4.65.0",
+	"requests>=2.31.0",
+	"openai>=1.0.0",
+]
+
+[project.optional-dependencies]
+# Local LLM judge (Linux + CUDA).
+vllm = [
+	"vllm>=0.5.0; sys_platform == 'linux'",
+	# vLLM 0.11 wraps sync ZMQ context in zmq.asyncio.Context; pyzmq 24 breaks that.
+	"pyzmq>=26.0.0; sys_platform == 'linux'",
+]
+# Optional 8-bit model loading.
+quantization = [
+	"bitsandbytes>=0.41.0; sys_platform == 'linux'",
+]
+# Human-evaluation web app (bridge_steering/human_eval).
+human-eval = [
+	"streamlit>=1.32",
+	"gspread>=6.0",
+	"google-auth>=2.0",
+	"deep-translator>=1.11",
+	"anthropic>=0.18.0",
+]
+
+[dependency-groups]
+dev = [
+	"pytest>=8.0",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["bridge_steering", "bridge_steering.*"]
+
+[tool.setuptools.package-data]
+bridge_steering = ["prompts/*.json"]
+
+[tool.uv]
+environments = [
+	"sys_platform == 'linux' and platform_machine == 'x86_64'",
+	"sys_platform == 'darwin' and platform_machine == 'arm64'",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "analysis/camera_ready/tests"]

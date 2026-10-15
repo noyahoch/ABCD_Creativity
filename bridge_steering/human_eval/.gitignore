@@ -1,0 +1,8 @@
+# Per-rater ratings DB (never commit, regenerated on each deploy)
+responses/
+
+# Streamlit secrets (Google Sheets service account etc.) — NEVER commit
+.streamlit/
+
+# The sample/manifest JSONs ARE committed so deploys can serve them. Add
+# `data/_local/` if you ever want a local-only scratch area.

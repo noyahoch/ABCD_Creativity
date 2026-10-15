@@ -1,0 +1,7 @@
+id,object,split,bridge,flag
+AUT_034_v2,ruler,construction,Introduce 'stop blocks' as primitives: tape/clip a stop at a tick to turn the ruler into a repeatability jig.,borderline
+AUT_046_v2,rubber glove,construction,"Introduce an insert medium (sand, rice, gel) to create a quasi-granular/tunable fingertip 'sensor pad'.",borderline
+AUT_040_v2_1,binder,construction,Introduce a 'flip-to-compare' comparator: mount A and B in adjacent ring-registered pages and alternate quickly to amplify differences.,borderline
+AUT_013_v2_1,index card,construction,Introduce the 'geometry gauge' primitive: cut notches/holes at known sizes to create a quick fit/spacing reference tool.,borderline
+AUT_081_v2,paperclip,held-out,"Introduce a 'probe+record' primitive: use the tip to find a location, then lock that geometry by bending a stop so it becomes a reusable gauge.",borderline
+AUT_112_v2,foam,construction,Introduce a 'preload cradle' primitive: cut geometry creates a self-centering cradle that holds parts by gentle compression.,borderline

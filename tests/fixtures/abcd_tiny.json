@@ -1,0 +1,41 @@
+[
+  {
+    "id": "AUT_TEST_001",
+    "domain": "AUT",
+    "A": "Give 8 unconventional uses for a brick in a kitchen setting.",
+    "A_OBJECT": "brick",
+    "D": ["Use as a doorstop", "Prop open a window"],
+    "B": {"type": "Re-representation", "rule": "Treat as thermal mass.", "unlocks": "Heat retention.", "justification": ""},
+    "B_list": [
+      {"type": "Re-representation", "rule": "Treat as thermal mass.", "unlocks": "Heat retention.", "justification": ""}
+    ],
+    "C": "",
+    "D_banal": ["Doorstop", "Paperweight", "Bookend", "Hammer", "Step stool", "Garden border", "Bench leg", "Plant base"]
+  },
+  {
+    "id": "AUT_TEST_002",
+    "domain": "AUT",
+    "A": "Give 8 unconventional uses for a paperclip.",
+    "D": ["Hold papers together"],
+    "B": {"type": "Substitution", "rule": "Treat as bendable wire.", "unlocks": "Shape changes.", "justification": ""},
+    "B_list": [
+      {"type": "Substitution", "rule": "Treat as bendable wire.", "unlocks": "Shape changes.", "justification": ""},
+      {"type": "Re-representation", "rule": "Treat as conductor.", "unlocks": "Circuit closing.", "justification": ""}
+    ],
+    "C": "",
+    "D_banal": ["Hold papers", "Bookmark", "Zipper pull", "Hook", "Reset button", "Money clip", "Cable manage", "Tag"]
+  },
+  {
+    "id": "AUT_TEST_003",
+    "domain": "AUT",
+    "A": "Give 8 unconventional uses for a tennis ball.",
+    "A_OBJECT": "tennis ball",
+    "D": ["Play tennis"],
+    "B": {"type": "Re-representation", "rule": "Treat as compressible sphere.", "unlocks": "Cushioning.", "justification": ""},
+    "B_list": [
+      {"type": "Re-representation", "rule": "Treat as compressible sphere.", "unlocks": "Cushioning.", "justification": ""}
+    ],
+    "C": "",
+    "D_banal": ["Play tennis", "Dog toy", "Massage", "Chair leg cap", "Juggling", "Stress relief", "Walker cap", "Ice pack alt"]
+  }
+]

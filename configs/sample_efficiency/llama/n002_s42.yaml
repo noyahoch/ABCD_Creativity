@@ -1,0 +1,131 @@
+# Table 16 | llama | Bridge steering vector from N=2 examples, alpha=0.17 | seed 42
+run_id: n002_s42
+output_root: results/sample_efficiency/llama
+model_name: meta-llama/Llama-3.1-8B-Instruct
+seed: 42
+
+aut:
+  abcd_data: data/aut_bridgeset.json
+  eval_seed: 7
+  eval_holdout: 40
+  train_subset_size: 2
+  prompts:
+    default_subject: full_instruction
+    allow_decoupling: true
+    decoupling_reason: Steering vectors use the bridge prompt; inference uses the paper prompt.
+    steering:
+      prompt_id: aut_user_a_paper_bridge
+    inference:
+      prompt_id: aut_user_a_paper_infer
+
+steering:
+  bridge_source: multi_b_concat
+  method: mean_diff
+  default_source: D_banal
+  probe_layers: [14, 15, 16, 17, 18, 19]
+  window: 0
+  collect_span: assistant_full
+  steer_target: residual
+  steer_scale: fixed
+  method_kwargs: {}
+  source_kwargs:
+    b_format_style: bullets_rule_unlocks
+
+decoding_aut:
+  temperature: 0.7
+  top_p: null
+  min_p: null
+  max_new_tokens: 384
+  num_inferences: 1
+  batch_size: 128
+
+aut_steering:
+  alphas: [0.17]
+  steer_layers_group: [14, 15, 16, 17, 18, 19]
+  steer_mode: all_new_tokens
+  steer_start_offset: 0
+  include_baseline: false
+
+macgyver_data: data/macgyver/problem_solution_pair.xlsx
+macgyver:
+  prompt_style: default
+  subset: solvable_unconventional
+  max_items: null
+
+decoding_macgyver:
+  temperature: 0.7
+  top_p: null
+  min_p: null
+  max_new_tokens: 384
+  num_inferences: 1
+  batch_size: 128
+
+macgyver_steering:
+  alphas: [0.17]
+  steer_layers_group: [14, 15, 16, 17, 18, 19]
+  steer_mode: all_new_tokens
+  steer_start_offset: 0
+  include_baseline: false
+
+aut_judge:
+  prompt_id: aut_judge_creativity_usability_v1
+  temperature: 0.0
+  max_concurrent: 128
+  max_retries: 3
+  timeout_s: 120.0
+  max_tokens: 400
+  seed: 42
+  backend:
+    type: vllm
+    base_url: http://localhost:8001/v1
+    model: Qwen/Qwen2.5-32B-Instruct-AWQ
+
+macgyver_judge:
+  prompt_id: macgyver_judge_additive_5pt_v1
+  temperature: 0.0
+  max_concurrent: 128
+  max_retries: 3
+  timeout_s: 600.0
+  max_tokens: 256
+  seed: 42
+  backend:
+    type: vllm
+    base_url: http://localhost:8001/v1
+    model: Qwen/Qwen2.5-32B-Instruct-AWQ
+
+ocsai:
+  url: https://openscoring.du.edu/llm
+  model: ocsai2
+  batch_size: 40
+  timeout_s: 300.0
+  max_attempts: 10
+  retry_backoff_s: 8.0
+  max_concurrency: 1
+
+originality:
+  ngram_index: results/novelty/fineweb_500m.npz
+  n_values: [4, 5, 6]
+
+diversity:
+  embedding_model: all-MiniLM-L6-v2
+  force_cpu: false
+
+vllm_server:
+  enable: true
+  model: Qwen/Qwen2.5-32B-Instruct-AWQ
+  host: 0.0.0.0
+  port: 8001
+  quantization: awq
+  tensor_parallel_size: 1
+  max_model_len: 4096
+  gpu_memory_utilization: 0.90
+  startup_timeout_s: 900
+  poll_interval_s: 5
+  terminate_timeout_s: 120
+  reuse_existing: true
+  keep_alive: false
+
+allow_archived_prompts: false
+
+experimental:
+  verbose_stages: true

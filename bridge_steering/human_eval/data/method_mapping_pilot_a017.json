@@ -1,0 +1,18 @@
+{
+  "build_seed": 2026,
+  "design": "paired (same source instances across methods)",
+  "aut_methods": [
+    "baseline",
+    "baseline_t15",
+    "ours_l18_23_a017"
+  ],
+  "macgyver_methods": [
+    "baseline",
+    "creative_minp005_t10",
+    "ours_l18_23_a017"
+  ],
+  "aut_n_objects": 15,
+  "macgyver_n_problems": 10,
+  "aut_n_items": 45,
+  "macgyver_n_items": 30
+}

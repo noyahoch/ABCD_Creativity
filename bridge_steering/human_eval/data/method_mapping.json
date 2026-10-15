@@ -1,0 +1,20 @@
+{
+  "build_seed": 2026,
+  "design": "paired (same source instances across methods)",
+  "aut_methods": [
+    "baseline",
+    "baseline_t15",
+    "ours_l18_23_a017"
+  ],
+  "macgyver_methods": [
+    "baseline",
+    "creative_minp01_t15",
+    "ours_l18_23_a020_unlocks"
+  ],
+  "aut_n_objects": 15,
+  "macgyver_n_problems": 100,
+  "aut_n_items": 45,
+  "macgyver_n_items": 300,
+  "macgyver_sample_source": "mg100_sample_draft.csv (seed 2026, <=350 chars, solvable_unconventional)",
+  "macgyver_pilot_backup": "macgyver_items_pilot_a017.json"
+}

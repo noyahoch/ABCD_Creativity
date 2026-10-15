@@ -1,0 +1,4 @@
+# Allowlist for test_no_prompt_text_outside_prompts.
+# One entry per line, format: relative/path.py:line:marker
+# Use sparingly — prefer moving the text to bridge_steering/prompts/.
+human_eval/translate_with_claude.py:49:Output ONLY

@@ -1,0 +1,14 @@
+{
+ "build_seed": 2026,
+ "draws_searched": 150000,
+ "design": "per-item ratings (NOT pairwise); paired problems, both arms shown",
+ "methods": {
+  "olson_a020": "newcode_mistral24b_olson_v3_a020_paper_s42",
+  "ours_l18_23_a020_brule": "newcode_mistral24b_l18_23_a020_paper_brule_unlocks_s42"
+ },
+ "n_problems": 80,
+ "n_items": 160,
+ "population_n": 952,
+ "balance_max_deviation_sem": 0.2161,
+ "note": "balanced on 4 marginals + 2 paired differences; selection is rejection sampling over uniform draws, not stratification"
+}

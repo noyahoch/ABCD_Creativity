@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+
+# Environments and secrets
+.venv/
+.env
+.env.*
+.secrets/
+
+# IDE / OS
+.idea/
+.vscode/
+.claude/
+.DS_Store
+
+# Run outputs (except the committed CI tables)
+/results/*
+!/results/analysis/
+/results/analysis/*
+!/results/analysis/ci_results.csv
+!/results/analysis/ci_results_a_only.csv
+*.log
+
+# Human-eval app responses
+bridge_steering/human_eval/responses/

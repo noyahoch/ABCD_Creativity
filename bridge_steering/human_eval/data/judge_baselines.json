@@ -1,0 +1,376 @@
+{
+  "aut": {
+    "AUT_000": {
+      "method": "baseline_t15",
+      "judge_nov": 7,
+      "judge_use": 6
+    },
+    "AUT_001": {
+      "method": "baseline_t15",
+      "judge_nov": 5,
+      "judge_use": 5
+    },
+    "AUT_002": {
+      "method": "baseline",
+      "judge_nov": 6,
+      "judge_use": 7
+    },
+    "AUT_003": {
+      "method": "baseline_t15",
+      "judge_nov": 7,
+      "judge_use": 6
+    },
+    "AUT_004": {
+      "method": "baseline_t15",
+      "judge_nov": 5,
+      "judge_use": 7
+    },
+    "AUT_005": {
+      "method": "baseline",
+      "judge_nov": 5,
+      "judge_use": 8
+    },
+    "AUT_006": {
+      "method": "baseline",
+      "judge_nov": 5,
+      "judge_use": 7
+    },
+    "AUT_007": {
+      "method": "baseline_t15",
+      "judge_nov": 6,
+      "judge_use": 7
+    },
+    "AUT_008": {
+      "method": "baseline",
+      "judge_nov": 5,
+      "judge_use": 6
+    },
+    "AUT_009": {
+      "method": "baseline",
+      "judge_nov": 5,
+      "judge_use": 6
+    },
+    "AUT_010": {
+      "method": "baseline_t15",
+      "judge_nov": 5,
+      "judge_use": 7
+    },
+    "AUT_011": {
+      "method": "baseline_t15",
+      "judge_nov": 6,
+      "judge_use": 7
+    },
+    "AUT_012": {
+      "method": "baseline_t15",
+      "judge_nov": 5,
+      "judge_use": 7
+    },
+    "AUT_013": {
+      "method": "ours_l18_23_a017",
+      "judge_nov": 7,
+      "judge_use": 6
+    },
+    "AUT_014": {
+      "method": "baseline_t15",
+      "judge_nov": 7,
+      "judge_use": 5
+    },
+    "AUT_015": {
+      "method": "baseline_t15",
+      "judge_nov": 7,
+      "judge_use": 5
+    },
+    "AUT_016": {
+      "method": "baseline",
+      "judge_nov": 6,
+      "judge_use": 7
+    },
+    "AUT_017": {
+      "method": "baseline",
+      "judge_nov": 5,
+      "judge_use": 7
+    },
+    "AUT_018": {
+      "method": "baseline",
+      "judge_nov": 5,
+      "judge_use": 8
+    },
+    "AUT_019": {
+      "method": "ours_l18_23_a017",
+      "judge_nov": 5,
+      "judge_use": 8
+    },
+    "AUT_020": {
+      "method": "baseline",
+      "judge_nov": 5,
+      "judge_use": 7
+    },
+    "AUT_021": {
+      "method": "ours_l18_23_a017",
+      "judge_nov": 5,
+      "judge_use": 7
+    },
+    "AUT_022": {
+      "method": "baseline_t15",
+      "judge_nov": 7,
+      "judge_use": 6
+    },
+    "AUT_023": {
+      "method": "ours_l18_23_a017",
+      "judge_nov": 7,
+      "judge_use": 6
+    },
+    "AUT_024": {
+      "method": "ours_l18_23_a017",
+      "judge_nov": 7,
+      "judge_use": 5
+    },
+    "AUT_025": {
+      "method": "ours_l18_23_a017",
+      "judge_nov": 7,
+      "judge_use": 4
+    },
+    "AUT_026": {
+      "method": "ours_l18_23_a017",
+      "judge_nov": 7,
+      "judge_use": 6
+    },
+    "AUT_027": {
+      "method": "baseline",
+      "judge_nov": 5,
+      "judge_use": 6
+    },
+    "AUT_028": {
+      "method": "baseline",
+      "judge_nov": 5,
+      "judge_use": 4
+    },
+    "AUT_029": {
+      "method": "baseline",
+      "judge_nov": 6,
+      "judge_use": 5
+    },
+    "AUT_030": {
+      "method": "baseline_t15",
+      "judge_nov": 6,
+      "judge_use": 7
+    },
+    "AUT_031": {
+      "method": "baseline",
+      "judge_nov": 7,
+      "judge_use": 6
+    },
+    "AUT_032": {
+      "method": "baseline_t15",
+      "judge_nov": 5,
+      "judge_use": 6
+    },
+    "AUT_033": {
+      "method": "baseline_t15",
+      "judge_nov": 7,
+      "judge_use": 6
+    },
+    "AUT_034": {
+      "method": "ours_l18_23_a017",
+      "judge_nov": 7,
+      "judge_use": 6
+    },
+    "AUT_035": {
+      "method": "ours_l18_23_a017",
+      "judge_nov": 7,
+      "judge_use": 6
+    },
+    "AUT_036": {
+      "method": "ours_l18_23_a017",
+      "judge_nov": 7,
+      "judge_use": 6
+    },
+    "AUT_037": {
+      "method": "baseline_t15",
+      "judge_nov": 5,
+      "judge_use": 6
+    },
+    "AUT_038": {
+      "method": "ours_l18_23_a017",
+      "judge_nov": 7,
+      "judge_use": 6
+    },
+    "AUT_039": {
+      "method": "ours_l18_23_a017",
+      "judge_nov": 7,
+      "judge_use": 6
+    },
+    "AUT_040": {
+      "method": "baseline",
+      "judge_nov": 5,
+      "judge_use": 6
+    },
+    "AUT_041": {
+      "method": "baseline",
+      "judge_nov": 5,
+      "judge_use": 7
+    },
+    "AUT_042": {
+      "method": "ours_l18_23_a017",
+      "judge_nov": 7,
+      "judge_use": 6
+    },
+    "AUT_043": {
+      "method": "ours_l18_23_a017",
+      "judge_nov": 5,
+      "judge_use": 6
+    },
+    "AUT_044": {
+      "method": "ours_l18_23_a017",
+      "judge_nov": 7,
+      "judge_use": 6
+    }
+  },
+  "macgyver": {
+    "MG_000": {
+      "method": "creative_minp005_t10",
+      "judge_quality": 3.0,
+      "ngram_4": 0.8428571428571429
+    },
+    "MG_001": {
+      "method": "ours_l18_23_a017",
+      "judge_quality": 4.0,
+      "ngram_4": 0.8439716312056738
+    },
+    "MG_002": {
+      "method": "creative_minp005_t10",
+      "judge_quality": 5.0,
+      "ngram_4": 0.7021276595744681
+    },
+    "MG_003": {
+      "method": "baseline",
+      "judge_quality": 4.0,
+      "ngram_4": 0.9339622641509434
+    },
+    "MG_004": {
+      "method": "creative_minp005_t10",
+      "judge_quality": 4.0,
+      "ngram_4": 0.8533333333333333
+    },
+    "MG_005": {
+      "method": "baseline",
+      "judge_quality": 5.0,
+      "ngram_4": 0.8837209302325582
+    },
+    "MG_006": {
+      "method": "ours_l18_23_a017",
+      "judge_quality": 5.0,
+      "ngram_4": 0.9448818897637795
+    },
+    "MG_007": {
+      "method": "baseline",
+      "judge_quality": 5.0,
+      "ngram_4": 0.766839378238342
+    },
+    "MG_008": {
+      "method": "creative_minp005_t10",
+      "judge_quality": 4.0,
+      "ngram_4": 0.9333333333333333
+    },
+    "MG_009": {
+      "method": "baseline",
+      "judge_quality": 1.0,
+      "ngram_4": 0.6829268292682926
+    },
+    "MG_010": {
+      "method": "ours_l18_23_a017",
+      "judge_quality": 5.0,
+      "ngram_4": 0.8424657534246576
+    },
+    "MG_011": {
+      "method": "baseline",
+      "judge_quality": 1.0,
+      "ngram_4": 0.90625
+    },
+    "MG_012": {
+      "method": "baseline",
+      "judge_quality": 3.0,
+      "ngram_4": 0.6666666666666667
+    },
+    "MG_013": {
+      "method": "baseline",
+      "judge_quality": 4.0,
+      "ngram_4": 0.8888888888888888
+    },
+    "MG_014": {
+      "method": "ours_l18_23_a017",
+      "judge_quality": 5.0,
+      "ngram_4": 0.9104477611940298
+    },
+    "MG_015": {
+      "method": "creative_minp005_t10",
+      "judge_quality": 4.0,
+      "ngram_4": 0.7623762376237624
+    },
+    "MG_016": {
+      "method": "creative_minp005_t10",
+      "judge_quality": 4.0,
+      "ngram_4": 0.6198830409356726
+    },
+    "MG_017": {
+      "method": "baseline",
+      "judge_quality": 5.0,
+      "ngram_4": 0.728813559322034
+    },
+    "MG_018": {
+      "method": "creative_minp005_t10",
+      "judge_quality": 5.0,
+      "ngram_4": 0.68944099378882
+    },
+    "MG_019": {
+      "method": "creative_minp005_t10",
+      "judge_quality": 5.0,
+      "ngram_4": 0.7946428571428572
+    },
+    "MG_020": {
+      "method": "ours_l18_23_a017",
+      "judge_quality": 5.0,
+      "ngram_4": 0.9145299145299145
+    },
+    "MG_021": {
+      "method": "creative_minp005_t10",
+      "judge_quality": 4.0,
+      "ngram_4": 0.8152173913043479
+    },
+    "MG_022": {
+      "method": "ours_l18_23_a017",
+      "judge_quality": 5.0,
+      "ngram_4": 0.8936170212765957
+    },
+    "MG_023": {
+      "method": "baseline",
+      "judge_quality": 4.0,
+      "ngram_4": 0.8421052631578947
+    },
+    "MG_025": {
+      "method": "creative_minp005_t10",
+      "judge_quality": 4.0,
+      "ngram_4": 0.8227848101265822
+    },
+    "MG_026": {
+      "method": "ours_l18_23_a017",
+      "judge_quality": 3.0,
+      "ngram_4": 0.9528301886792453
+    },
+    "MG_027": {
+      "method": "ours_l18_23_a017",
+      "judge_quality": 5.0,
+      "ngram_4": 0.8518518518518519
+    },
+    "MG_028": {
+      "method": "ours_l18_23_a017",
+      "judge_quality": 4.0,
+      "ngram_4": 0.8672566371681416
+    },
+    "MG_029": {
+      "method": "ours_l18_23_a017",
+      "judge_quality": 4.0,
+      "ngram_4": 0.8064516129032258
+    }
+  }
+}

@@ -1,0 +1,289 @@
+{
+  "study_design": {
+    "method_under_test": {
+      "slug": "steered_L18-23_a0.17",
+      "label": "steered \u03b1=0.17 T=0.7",
+      "description": "AUT-trained steering vector, L18-23, mean_diff, all_new_tokens, alpha=0.17, T=0.7."
+    },
+    "comparison_baselines": [
+      {
+        "slug": "creative_decoding_minp0.1_t1.5",
+        "label": "creative-decoding (min_p=0.1, T=1.5)",
+        "rationale": "Competitive sampling-based creativity baseline."
+      },
+      {
+        "slug": "baseline",
+        "label": "baseline T=0.7",
+        "rationale": "Plain Mistral-Small-24B-Instruct at default temperature, no steering."
+      }
+    ],
+    "model": "mistralai/Mistral-Small-24B-Instruct-2501",
+    "seed": 42,
+    "domains": [
+      "creative_writing",
+      "design"
+    ],
+    "trial_pairs": {
+      "steered_vs_creative_decoding": 6,
+      "steered_vs_baseline": 6
+    },
+    "total_trials_per_rater": 12,
+    "ab_randomization_seed": 20260526,
+    "instructions_for_rater": "You will be shown a prompt and two responses (A and B). Choose which response you think is better, considering: novelty (non-default / surprising / non-templated), coherence (fluent, well-formed), and constraint-respect (honors any explicit constraints in the prompt, e.g. word counts, banned phrases, 'do NOT' lists). The side assignment (A vs B) is randomized per trial \u2014 do not assume one side is consistently from one method.",
+    "analysis_note": "For each (pair_id, prompt_id), score +1 if the rater picked 'ours' and -1 if they picked 'other'. Aggregate across raters with a binomial / sign test per pair_id and per domain."
+  },
+  "trials": [
+    {
+      "trial_id": "T01",
+      "pair_id": "steered_vs_creative_decoding",
+      "prompt_id": "cw_clockmaker_silence",
+      "domain": "creative_writing",
+      "prompt_title": "Clockmaker whose town has gone silent",
+      "prompt_text": "Write the opening of a short story (about 150-200 words) about the last clockmaker in a town where every clock has stopped ticking at the same instant. Establish atmosphere and a single small action. Do not explain the cause.",
+      "seed": 42,
+      "ours_position": "B",
+      "a_internal_method": "creative_decoding_minp0.1_t1.5",
+      "b_internal_method": "steered_L18-23_a0.17",
+      "a_text": "In the quietude of Willow's End, where time seemed to have lost its rhythm, Edmund Stoneweather hunched over his workbench, his breath fogging up the small glass pane in front of him. The town, nestled in a valley where the old world seemed to linger, was silent, devoid of the usual tick-tock symphony that once echoed through its cobblestone streets. Every clock in every home, shop, and public building had stopped at precisely 3:47 one cold October morning. Some people still slept by the rising sun, others guessed time based on the sky\u2019s hues, but Edmund was not so resigned. His eyes, magnified by round, gold-rimmed spectacles, studied the delicate gearwork on his table. He turned a small screw ever so slightly and leaned back, waiting. Still, the room remained silent, without any hint of the rhythmic heart of time. Despite the absence of any reassuring tick-tock, he picked up an old feather duster and gently brushed away a speck of dust from a small, delicate pendulum. His fingers hovered for a moment, a moment when every small decision might restore the missing cadence, but Edmund could only hope to rejuvenate a rhythm that might be impossible to rekindle.",
+      "b_text": "In the quietude of Hollowford, where the river's whisper was the only rhythm, Master Elwood's workshop stood as a relic of a time when clocks ruled the town. Every face, every pendulum, every gear and spring had frozen in unison, leaving the village in a peculiar, drawn-out silence. The sun hung low, casting long shadows that danced with the dust motes in the stale air.\n\nElwood, the last clockmaker, sat amidst the hushed ticking absence. His gnarled hands, bearing the etchings of a lifetime of craft, hovered over a motionless clock. Today, he didn't reach for the tools of his trade, but for a small, worn journal tucked behind a stack of blueprints. He turned the pages, each entry a testament to a different day, a different silence. With a trembling hand, he added a single, stark line: \"Day 47. Stillness persists.\" Setting down his pen, he looked out the window, where the town square's grand clock stared back, its hands forever fixed at 10:43.",
+      "rater_question": "Which response is better? Consider novelty, coherence, and constraint-respect.",
+      "rater_choices": [
+        "A is clearly better",
+        "A is slightly better",
+        "B is slightly better",
+        "B is clearly better"
+      ]
+    },
+    {
+      "trial_id": "T02",
+      "pair_id": "steered_vs_creative_decoding",
+      "prompt_id": "cw_letter_to_a_river",
+      "domain": "creative_writing",
+      "prompt_title": "A letter addressed to a river",
+      "prompt_text": "Write a short letter (about 150 words) addressed directly to a river, written by someone who has not visited it in twenty years. It should feel like a real letter, not a description. Avoid cliched nature imagery.",
+      "seed": 42,
+      "ours_position": "B",
+      "a_internal_method": "creative_decoding_minp0.1_t1.5",
+      "b_internal_method": "steered_L18-23_a0.17",
+      "a_text": "Dear River,\n\nIt's been twenty years since I stood on your bank. We've both aged.  I'm here, in this strange town, yet you, River, always a steadfast part of me. I remember the sound of your ceaseless motion, and how you smelled of Earth's history, damp and undeniably you.\n\nThe water's face has likely changed, yet not really. I was always so in love with your flow that it left me wondering. How does the water fall out of the sky, into you and become you, but no longer part of it?\n\nThere\u2019s a song you carry and I long to hear its tune once again, with its rhythm that will dance in my bones as I look on your bank, waiting for time to slow down and we can simply be.\n\nI wonder about the birds, too. What have they been saying in your presence, and does anyone listen? I'm sure you have more wisdom than the last time I heard you.\n\nI'll visit soon, my friend.\n\nUntil then.",
+      "b_text": "Dear River,\n\nI've been thinking about you a lot lately. Twenty years is a long time, and I'm sure you've changed. I wonder if you remember me, that gangly kid who'd spend summers with you, exploring your banks and current.\n\nYou were my confidant then, witness to my secrets and dreams. I'd sit on your banks and tell you everything, as if you could understand. Maybe you did. I'd love to sit with you again, share what's changed, and catch up.\n\nI've missed you, River. You were constant, unchanging, while everything else shifted. I'd love to see you again, feel your flow and hear your voice.\n\nI promise this time, I won't wait twenty more years.\n\nYours, across time and distance,\n\nAlex",
+      "rater_question": "Which response is better? Consider novelty, coherence, and constraint-respect.",
+      "rater_choices": [
+        "A is clearly better",
+        "A is slightly better",
+        "B is slightly better",
+        "B is clearly better"
+      ]
+    },
+    {
+      "trial_id": "T03",
+      "pair_id": "steered_vs_creative_decoding",
+      "prompt_id": "cw_dialogue_two_strangers_lift",
+      "domain": "creative_writing",
+      "prompt_title": "Two strangers stuck in a lift, ninety seconds of dialogue",
+      "prompt_text": "Write a ninety-second scene (dialogue only, about 180 words) between two strangers stuck in a stopped lift. Neither character may complain about the lift or ask the other what they do for a living. Make their voices distinct.",
+      "seed": 42,
+      "ours_position": "B",
+      "a_internal_method": "creative_decoding_minp0.1_t1.5",
+      "b_internal_method": "steered_L18-23_a0.17",
+      "a_text": "**Character A - A gentle, older woman named Martha, with a hint of a Scottish accent**\n\n**Character B - A younger man named Jamie, energetic and a bit nervous**\n\n**Martha:** Oh dear, it's quite cozy in here, isn't it? It is warm, but then I've always found elevators to be the best place for a wee nap.\n**Jamie:** You're quite right. You can have your coffee break while waiting. I've got a pack of cards in my bag.\n**Martha:** Oh, you're a card player?\n**Jamie:** No, I'm not! It was just for my train ride, to keep my hands busy.\n**Martha:** Good, I always said, card games should be fun, and you've just got the eyes for it.\n**Jamie:** So what do you play then?\n**Martha:** Oh, it\u2019s all about the games. Poker or bridge, but nothing too serious.\n**Jamie:** I guess if I\u2019m ever stuck like this again, I\u2019ll make sure I\u2019ve got a deck ready!\n**Martha:** Don\u2019t forget the coffee!\n**Jamie:** Now, would you rather fight 500 mice or swim with a dozen sharks?\n**Martha:** Well, I would just be in the kitchen, watching the mice... or would it be a cage?\n\n*The lift shakes suddenly. There is no sound except for the quiet whirr of machinery that resumes.*\n\n**Martha:** Looks like it's a good day for sharks.\n*The lift continues to hum, but they don\u2019t hear any more from the outside world.*\n**Jamie:** Here we go! A shark might just be a good place to have my coffee.",
+      "b_text": "**Characters:**\n- **Eleanor** (E), a warm, philosophical 70-something with a slight Irish lilt.\n- **Jamal** (J), a jovial, energetic 30-something with a knack for storytelling.\n\n---\n\n**Eleanor:** (soft chuckle) Well, isn't this a pickle. Not that I mind if you're company's good.\n\n**Jamal:** (grinning) Oh, I'm excellent company, ma'am. You'll be thinking we're in a luxury lounge by the time we're out of here.\n\n**Eleanor:** I'm Eleanor, by the way. And I'd wager you're a charmer, Jamal.\n\n**Jamal:** (laughs) Guilty as charged. So, Eleanor, ever found yourself in a tight spot like this before?\n\n**Eleanor:** More times than I can count. Life's all about these little adventures, isn't it? Like that time I got stuck in a tree at the old Miller farm.\n\n**Jamal:** (eyes wide) You don't mean old man Miller's orchard? I swear, that place is a legend.\n\n**Eleanor:** Oh, it is. And I swore I'd never outlive its tales.",
+      "rater_question": "Which response is better? Consider novelty, coherence, and constraint-respect.",
+      "rater_choices": [
+        "A is clearly better",
+        "A is slightly better",
+        "B is slightly better",
+        "B is clearly better"
+      ]
+    },
+    {
+      "trial_id": "T04",
+      "pair_id": "steered_vs_creative_decoding",
+      "prompt_id": "des_bus_stop_no_seat",
+      "domain": "design",
+      "prompt_title": "Bus stop that discourages long lingering without a bench",
+      "prompt_text": "Design a city bus stop that gently discourages long lingering (loitering, sleeping) WITHOUT using hostile architecture, removing seating, or playing unpleasant music. Commit to a single design move, describe the physical artefact, the experience for a 70-second wait vs. a 70-minute wait, and the trade-off you accept. About 250 words.",
+      "seed": 42,
+      "ours_position": "B",
+      "a_internal_method": "creative_decoding_minp0.1_t1.5",
+      "b_internal_method": "steered_L18-23_a0.17",
+      "a_text": "Introducing the \"Dynamic Canopy\" bus stop design, a creative solution that encourages active waiting and discourages prolonged loitering without resorting to hostile or uncomfortable tactics.\n\n**Physical Artefact:**\n\nA semi-enclosed bus stop with a gently sloping, transparent, and heated canopy roof that slowly rotates 180 degrees in an hour, propelled by a quiet motor and powered by solar energy from the roof. Seating is provided by a low wall with a warm surface, surrounding the open space. The bus schedule is displayed on a small screen, which updates to show the time of the next bus.\n\n**Experience:**\n\nFor a 70-second wait: The canopy rotates, changing the shade cast onto the space as it provides protection from sun, rain or snow, ensuring that passengers do not feel exposed during this brief wait, creating a comfortable experience while encouraging passengers to stay alert to avoid missing their bus.\n\nFor a 70-minute wait: The canopy's movement is so slow that it goes unnoticed after 5 minutes. However, passengers can use the canopy rotation as a measure of time and they may feel a sense of momentum or progress due to the rotation, discouraging a lengthy stay.\n\n**Trade-off:**\n\nThe dynamic canopy has a slow moving motor that has the ability to occasionally breakdown. It needs to be serviced, costing time and money in maintenance. There is an expense and logistics for solar panels to power the canopy rotation. The design could potentially attract or repel certain kinds of people. The overall bus stop could be more expensive and complicated than traditional alternatives.",
+      "b_text": "Introducing the **\"Dynamic Canopy\" bus stop**, a design that encourages natural circulation and gently discourages long lingering through subtle environmental dynamics.\n\n**Physical Artefact:**\nA semi-transparent, adaptive canopy structure, composed of a smart material that responds to the environment, such as photochromic and thermochromic fabrics. This canopy is supported by slender, dynamic columns that subtly oscillate at variable speeds. Beneath, modular, low-profile seating is integrated with subtle, warm lighting and minimalist information displays.\n\n**70-second Experience:**\nPassengers arrive to find the canopy subtly adjusting, providing shelter and visual interest. The lighting is soft and inviting. The seating is comfortable but not overly so, encouraging a sense of transience. Information displays are clear and engaging, ensuring passengers remain informed and focused on their immediate task: waiting for the bus.\n\n**70-minute Experience:**\nAs time extends, the canopy's materials subtly shift in response to environmental changes, creating a dynamic visual experience that gently discourages stasis. The columns' oscillations become more perceptible, inducing a low-level proprioceptive discomfort that discourages prolonged occupation. The lighting and displays, while still functional, become less engaging, with information repetition and subtly reduced intensity, reflecting the passage of time and the intended use of the space.\n\n**Trade-off:**\nThe primary trade-off is the acceptance of potential discomfort for long-term occupants, achieved through dynamic environmental manipulation rather than overt hostility. The design acknowledges that the primary function of a bus stop is facilitation of transit, not prolonged occupation, and encourages passengers to view the space as a transitional zone.\n\nThis approach balances the need to accommodate all users, including those with differing transit needs, while gently discouraging behaviours that may negatively impact the primary function of the space.",
+      "rater_question": "Which response is better? Consider novelty, coherence, and constraint-respect.",
+      "rater_choices": [
+        "A is clearly better",
+        "A is slightly better",
+        "B is slightly better",
+        "B is clearly better"
+      ]
+    },
+    {
+      "trial_id": "T05",
+      "pair_id": "steered_vs_creative_decoding",
+      "prompt_id": "des_calendar_for_grief",
+      "domain": "design",
+      "prompt_title": "A calendar app aware that the user is grieving",
+      "prompt_text": "Design a single feature for a calendar app that helps a user who has recently lost someone close. Do NOT propose pop-ups, AI chat, or grief-tracking dashboards. Commit to one quiet, specific feature. Describe what it does, what it does NOT do, and how it behaves the first time the user opens the app at 6am on the anniversary. About 220 words.",
+      "seed": 42,
+      "ours_position": "A",
+      "a_internal_method": "steered_L18-23_a0.17",
+      "b_internal_method": "creative_decoding_minp0.1_t1.5",
+      "a_text": "Introducing **\"Memorial Moments\"**.\n\n**What it does:**\nMemorial Moments allows users to designate specific dates as memorials, integrating subtle, optional reminders into the calendar. For each memorial, users can set a title (e.g., \"In Memory of Alex\") and a symbolic image (e.g., a soft, silent image like a candle or a tranquil scene). On memorial dates, the app replaces the default color scheme with a soft, muted palette and the user-selected image. The memorial title appears at the top of the calendar view, accompanied by a subtle, non-intrusive visual cue, such as a gentle color shift or a soft glow around the date.\n\n**What it does NOT do:**\nMemorial Moments does not generate notifications, alerts, or intrusive prompts. It does not alter the core functionality of the calendar or the user's data. It does not dictate user behavior, nor does it attempt to interpret or influence emotional states.\n\n**Behavior on first anniversary (6:00 AM):**\nAt 6:00 AM on the designated date, the user opens the app to find a tranquil, muted color scheme. The user-selected image is present, and the title \"In Memory of Alex\" is displayed at the top. The calendar retains full functionality, with no additional interruptions or data overlays. The app remains silent and respectful, offering a serene, private space for reflection. The memorial visualization persists for 24 hours before returning to the default state at the next midnight.",
+      "b_text": "Introducing \"Memories in Time\" \u2013 a gentle, unobtrusive feature designed to honor the memory of a lost loved one.\n\n**What it does:**\n\nIt allows users to set specific dates as memorials. On the chosen date, the app will display a soft, subtle color to mark that date in the background.\n\nIt shows the initials or the first name of the lost one in the side bar where events are usually displayed. Clicking on it displays a quiet message with their first name that is entered by the user to commemorate that date.\n\nThe color scheme and font remain unchanged; the feature aims to gently remind and not interfere with the rest of the app\u2019s functionality.\n\n**What it does NOT do:**\n\nThis feature does not display pictures, lengthy messages, or notifications on the chosen dates. It will not interrupt the user, and it is completely hidden in the app settings once set.\n\n**First use on the anniversary at 6am:**\n\nWhen the user first opens the app at 6am on the anniversary day, it is important to make sure the memory is honoured while remaining respectful of the time the user opens it.\n\nIt will display a gentle fade-in animation on the anniversary date, a subtle hue for the remainder of the day.\n\nA small grey icon will appear beside their usual events for that day in the side bar. Upon clicking on it, the first name of the person being remembered appears in a soft, neutral font that only appears on the side bar and not across the whole app. It will remain present there for the rest of the day and will vanish at 11:59PM.",
+      "rater_question": "Which response is better? Consider novelty, coherence, and constraint-respect.",
+      "rater_choices": [
+        "A is clearly better",
+        "A is slightly better",
+        "B is slightly better",
+        "B is clearly better"
+      ]
+    },
+    {
+      "trial_id": "T06",
+      "pair_id": "steered_vs_creative_decoding",
+      "prompt_id": "des_museum_one_artifact",
+      "domain": "design",
+      "prompt_title": "A museum with exactly one artifact",
+      "prompt_text": "Design a small museum that exhibits exactly one artifact (your choice of artifact). Describe the building's layout, what the visitor experiences in the first sixty seconds, what happens after they have looked at the artifact for ten minutes, and the single trade-off this design forces. About 260 words.",
+      "seed": 42,
+      "ours_position": "B",
+      "a_internal_method": "creative_decoding_minp0.1_t1.5",
+      "b_internal_method": "steered_L18-23_a0.17",
+      "a_text": "**Artifact**: A ancient Greek Antikythera mechanism\n\n**Museum**: The Chrono-Chorus Museum\n\n**Building Layout**: The museum is a cylindrical building designed around a central atrium with a single room connected. It is nestled in a garden, creating a peaceful transition into the experience.\n\nThe exterior is adorned with an intricate series of mosaics that represent historical periods spanning centuries, including the classical era of Greece. The entrance, a large circular door, invites visitors inside. A central atrium is adorned with the largest of the mosaic's, which visually flows into the room which the artifact resides.\n\n**First 60 Seconds**: As the visitor walks into the building, they enter the dimly lit central atrium. A hushed narrative of a Greek guide softly plays through hidden speakers, recounting the mysteries and wonders of the ancient world, specifically, the mysteries of the Antikythera mechanism. They proceed down a dark hallway and enter the cylindrical display room with an oval pedestal centered in a pool of soft white light. On the pedestal is the Antikythera Mechanism encased in glass, the museum\u2019s centerpiece.\n\n**Ten Minute Experience**: The room is adorned with a ring of touch-activated screens, each offering different aspects of the mechanism's story through text, videos, and animations, providing an interactive deep dive into the device's complexities. A gentle hum in the background adds a serene atmosphere. Visitors can explore different segments on the screens and read detailed explanations about its functions, historical context, and the process of discovery. The screens rotate information, making sure that even without interaction there is a continual flow of knowledge, ensuring the viewer doesn\u2019t get stuck at one point for too long.\n\n**Trade-off**: While the museum provides a deeply engaging and immersive experience into one artifact, it is at the expense of offering more comprehensive exhibitions. This trade-off is ideal for those looking for a singular focus but might leave visitors interested in broader collections feeling underwhelmed.",
+      "b_text": "**Museum Concept: The Resonance Chamber**\n\n**Artifact:** The Resonance Chamber exhibits a rare, 16th-century, monochord\u2014a single-stringed instrument used for both music and scientific study of sound.\n\n**Building Layout:**\nThe museum is a circular, two-story structure, evoking the harmony and simplicity of the monochord's design. The ground floor is a singular, open space, while the first floor is a concentric ring, accessible via a helical ramp. The monochord is centrally displayed on a black, spherical plinth at the first-floor level, suspended within a near-silent, acoustically enhanced chamber.\n\n**First Sixty Seconds:**\nVisitors enter the ground floor, greeted by a hushed, resonant hum, suggesting the monochord's influence. A dim, spectral lighting guides their gaze upward. Ascending the ramp, they encounter interactive, historical narratives projected onto the walls, revealing the monochord\u2019s significance. At the first-floor threshold, a subtle shift in auditory environment\u2014tactile sounds of the instrument\u2014prepares visitors for the encounter.\n\n**Ten Minutes Later:**\nAfter immersive engagement through touch, sound, and visuals, visitors experience a guided, real-time sonification of the monochord's principles. A live performer, visible but distant, activates the monochord, eliciting haunting harmonies. Visitors, now attuned, perceive the instrument\u2019s resonance as a tangible, enveloping force. The chamber's responsive acoustics enable collective exploration, with each visitor's presence and interaction subtly influencing the resonance.\n\n**Trade-off:**\nThe Resonance Chamber's singular focus on the monochord and its principles necessitates that all other sensory inputs\u2014visual, tactile, and narrative\u2014are subordinated to this central experience. This design emphasizes the monochord's resonance at the cost of broader contextual diversity, potentially limiting the appreciation of its historical and cultural nuances.",
+      "rater_question": "Which response is better? Consider novelty, coherence, and constraint-respect.",
+      "rater_choices": [
+        "A is clearly better",
+        "A is slightly better",
+        "B is slightly better",
+        "B is clearly better"
+      ]
+    },
+    {
+      "trial_id": "T07",
+      "pair_id": "steered_vs_baseline",
+      "prompt_id": "cw_unconstrained_chance_encounter_train",
+      "domain": "creative_writing",
+      "prompt_title": "Chance encounter on a train (no constraints)",
+      "prompt_text": "Write a short story (about 150-200 words) about a chance encounter between two strangers on a train.",
+      "seed": 42,
+      "ours_position": "A",
+      "a_internal_method": "steered_L18-23_a0.17",
+      "b_internal_method": "baseline",
+      "a_text": "In the grimy, fluorescent light of the late-night train, Amelia slumped in her seat, notebook open, pen poised, but words elusive. The carriage was sparse, save for a few scattered passengers. Across the aisle, a man in a worn suit, eyes closed, held a tattered book.\n\nAmelia's gaze drifted to his title: \"The Starship and the Sea.\" Intrigued, she glanced at the man. His eyes opened, catching her. He smiled softly, extending the book. \"It's a peculiar blend of nautical and cosmic adventure. Here, take a look.\"\n\nShe accepted, their fingers brushing. \"Amelia,\" she said, introducing herself.\n\n\"Leo,\" he replied.\n\nThe train juddered, and Amelia stumbled, the book tumbling. Leo lunged, catching it. Their eyes met, laughter brewing. \"Let's call it fate,\" he said, handing back the book.\n\nTogether, they navigated the text, voices weaving narratives with each page. Amelia's notebook filled with new ideas, Leo's eyes gleamed with rediscovered passions. Hours passed, stations blinked by.\n\nAs the train approached their mutual stop, Leo turned to Amelia. \"I'm leaving tomorrow, chasing a dream. But I'd love to share the journey, Amelia. With you.\"\n\nAmelia smiled, extending her hand. \"Let's write our story, Leo. Together.\"",
+      "b_text": "In the heart of rush hour, the train carriage was a symphony of hurried footsteps, rustling newspapers, and the hum of distant conversations. Emma, tucked in the corner, was engrossed in her book, a worn-out copy of \"Pride and Prejudice.\" Across from her, a man in a worn-out suit tried to balance a large, unwieldy painting against the train's sway.\n\nAs the train lurched, the painting slipped, and a corner of the canvas brushed against Emma's book, nearly knocking it from her hands.\n\n\"Oh, I'm sorry!\" the man exclaimed, reaching out to steady the painting.\n\nEmma smiled, marking her page. \"No harm done. It's quite lovely, isn't it?\"\n\nThe man looked at the painting, a serene landscape, then back at Emma. \"Yes, it is. I found it in an old shop. It reminded me of home.\"\n\nEmma gestured to her book. \"This reminds me of home too. I grew up on these stories.\"\n\nHe smiled, a warm, genuine smile. \"I'm Jake, by the way.\"\n\n\"Emma.\"\n\nThey fell into easy conversation, their voices blending with the rhythm of the train. Emma talked about her love for classic literature, and Jake shared the inspiration behind his paintings. As the train pulled into Emma's station, she paused before stepping out. \"It was nice meeting you, Jake.\"\n\n\"Likewise, Emma. Who knows, maybe we'll meet again someday.\"\n\nShe smiled, believing in the magic of chance encounters and the stories yet to be written.",
+      "rater_question": "Which response is better? Consider novelty, coherence, and constraint-respect.",
+      "rater_choices": [
+        "A is clearly better",
+        "A is slightly better",
+        "B is slightly better",
+        "B is clearly better"
+      ]
+    },
+    {
+      "trial_id": "T08",
+      "pair_id": "steered_vs_baseline",
+      "prompt_id": "cw_translator_dead_language",
+      "domain": "creative_writing",
+      "prompt_title": "Translator of a manuscript in a language with no living speakers",
+      "prompt_text": "Write the opening of a short story (about 150-200 words) about a translator working on a manuscript in a language with no living speakers. Do not explain how they learned the language. Establish atmosphere through a single object on their desk.",
+      "seed": 42,
+      "ours_position": "A",
+      "a_internal_method": "steered_L18-23_a0.17",
+      "b_internal_method": "baseline",
+      "a_text": "In the hushed sanctum of her study, Dr. Elara Vesperia bent over her desk, the late afternoon light from the lone window gilding the gnarled contours of an object that had once been a living being. A fossilized, hand-sized seedpod, its surface a labyrinth of intricately etched symbols, lay at the center of her workspace. It was the Rosetta Stone of the extinct Lumen language, her obsession, her obsession. The room was a museum of her dedication: scrolls of annotated text, grammars both proposed and disproven, and lexicons that danced on the edge of meaning.\n\nElara's fingers traced the pod's contours as if they were the keys of an ancient instrument, each symbol a note, each sequence a chord resonating through centuries of silence. The manuscript before her was a symphony of such notes, a testament to a culture lost, yet stubbornly present in the dance of line and void. Her quill, poised over a page of meticulous transcription, awaited her interpretation, while the seedpod whispered its secrets in a language it alone preserved.",
+      "b_text": "In the hushed silence of her study, Dr. Elara Hartfield leaned over the ancient manuscript, her magnifying glass hovering over the faded parchment. The only sound was the soft ticking of the antique hourglass on her desk. It was a relic she had found in the same ancient ruins as the manuscript, its sand an eerie echo of the passage of time. The glass was etched with symbols that mirrored those on the manuscript, symbols that held secrets from a language long dead.\n\nThe room was dimly lit, the air filled with the scent of old paper and dust. The manuscript, bound in leather that had turned brittle with age, lay open before her, its pages filled with a script that no living person had spoken in centuries. Yet, for her, it was a familiar language, a puzzle that had captivated her for years. Each symbol was a whisper from the past, a story waiting to be told. The hourglass reminded her of the fleeting nature of time, a constant reminder that she must preserve this history before it faded away like the grains of sand slipping through the glass.",
+      "rater_question": "Which response is better? Consider novelty, coherence, and constraint-respect.",
+      "rater_choices": [
+        "A is clearly better",
+        "A is slightly better",
+        "B is slightly better",
+        "B is clearly better"
+      ]
+    },
+    {
+      "trial_id": "T09",
+      "pair_id": "steered_vs_baseline",
+      "prompt_id": "cw_siblings_garage",
+      "domain": "creative_writing",
+      "prompt_title": "Two siblings emptying a late parent's garage",
+      "prompt_text": "Write a 180-220 word scene (dialogue plus brief action) of two adult siblings emptying their late parent's garage. One wants to keep nothing; one wants to keep everything. Do not state the parent's cause of death, and do not have either character explicitly name their grief.",
+      "seed": 42,
+      "ours_position": "B",
+      "a_internal_method": "baseline",
+      "b_internal_method": "steered_L18-23_a0.17",
+      "a_text": "Emma tugged at the dusty sheet covering a pile of old furniture. \"We should just toss all this. It's been sitting here for years.\"\n\nMark, her older brother, gently brushed her hand away. \"Emma, these are Mom's things. We can't just throw them out.\"\n\n\"This stuff is just collecting dust,\" Emma said, her voice tight. She picked up an old vase, turning it over in her hands. \"Aren't we supposed to be moving forward?\"\n\nMark took the vase from her, his grip soft. \"Moving forward doesn't mean we have to forget. Remember when she used to paint these vases? We can't just pretend it never happened,\" he said, setting the vase on a nearby table.\n\nEmma sighed, turning away from him. She picked up a box of old books, leafing through them. \"I know we can't forget, Mark. But we can't keep everything. It's too much.\"\n\nMark nodded, but his gaze lingered on the vase. \"I know. Maybe we can find a way to keep a few things that really matter. Let's just go through things carefully. We\u2019ll make a pile for keeps and a pile for donation.\"\n\nEmma nodded, her eyes straying to the box of books. \"Alright. Let's do it together.\"",
+      "b_text": "Emma tugs at a dusty box, sliding it from the shadows of the garage. Jake, her brother, leans against the workbench, arms crossed.\n\n\"You're not seriously considering keeping all this, are you?\" Emma asks, glancing at the clutter.\n\nJake sighs, \"It's not just stuff, Em. It's history. Mom's life, our life.\"\n\nEmma shakes her head, picking up a rusted tool. \"History is in our heads, Jake. Not in this dust.\" She tosses the tool into a discard pile.\n\nJake bristles, \"Easy for you to say. You weren't here. You didn't see how she...how she...loved this place.\"\n\nEmma softens, but her resolve holds. \"I know. But keeping everything isn't honoring her. It's just...stagnation.\" She turns back to the boxes.\n\nJake pushes off from the workbench, joining her. He picks up a small, worn toy\u2014a remnant of their childhood. \"This isn't stagnation, Em. It's remembrance.\" He holds it out to her.\n\nEmma looks at the toy, her expression inscrutable. She takes it, tucks it into her pocket. \"One thing, Jake. That's all I'm willing to concede.\"\n\nThey work in silence, the garage echoing with the ghosts of their past.",
+      "rater_question": "Which response is better? Consider novelty, coherence, and constraint-respect.",
+      "rater_choices": [
+        "A is clearly better",
+        "A is slightly better",
+        "B is slightly better",
+        "B is clearly better"
+      ]
+    },
+    {
+      "trial_id": "T10",
+      "pair_id": "steered_vs_baseline",
+      "prompt_id": "des_strike_commemoration",
+      "domain": "design",
+      "prompt_title": "Public commemoration of a forgotten 1920s labor strike",
+      "prompt_text": "Design a small public artifact (statue / installation / sidewalk marker / etc.) that commemorates a forgotten labor strike of the 1920s in a way that passersby can engage with in 60 seconds. Do NOT use a plaque with text, a QR code, or audio narration. Commit to a single physical move. Describe the artifact, the 60-second engagement, and the trade-off you accept. About 240 words.",
+      "seed": 42,
+      "ours_position": "A",
+      "a_internal_method": "steered_L18-23_a0.17",
+      "b_internal_method": "baseline",
+      "a_text": "**Artifact:** A dynamic, abstract sculpture titled \"Hands of Progress.\"\n\n**Description:** The sculpture is a bronze, 6-foot-tall structure consisting of two stylized, interlocking hands, each representing a different class of workers. One hand is rugged, depicting manual labor; the other is refined, symbolizing managerial or professional skills. The hands are locked in a tense yet balanced interaction, with the fingers of each hand forming a rhythm of tension and resolution.\n\n**60-Second Engagement:**\n\n1. (0-10s) The passerby notices the sculpture and its dynamic form.\n2. (10-20s) They approach and examine the hands, noting the contrasts in style and form.\n3. (20-40s) The passerby is invited to interact with the sculpture. Subtle tactile feedback mechanisms in the sculpture's palms respond to touch, causing the hands to shift or vibrate slightly. This is the first hint of the tension and negotiation.\n4. (40-60s) Through physical interaction, passersby discover that the hands can be moved, resolving into a balance or 'shake.' This tactile, kinetic engagement with the sculpture reflects the negotiation and resolution of labor disputes.\n\n**Trade-off:** The sculpture abstracts the specific historical event into metaphorical form, sacrificing direct narrative for broad thematic engagement. The trade-off is specificity for accessibility; it broadens the audience by distilling the narrative into a universally relatable experience.",
+      "b_text": "**Artifact: The \"Seamstress' Bench\"**\n\nA weathered wooden bench, designed to resemble a seamstress' worktable, is installed in a small city park. The bench has a smooth, polished top, with the faint impressions of a sewing needle and thread etched into the surface. Inside the bench is a hidden compartment where passersby can find a small embroidery hoop with a needle and thread.\n\n**60-second engagement:**\n\n1. Passersby notice the bench's unique design and the etching of a needle and thread.\n2. They open the compartment and find the embroidery hoop.\n3. They are encouraged to pick up the needle and thread and add a stitch or two to the fabric in the hoop.\n4. The bench is positioned near a tree, with a small bin for the embrodery hoop and needle and thread, so after completing a stitch, passersby return it to the bench for the next person.\n5. The fabric in the hoop displays a growing design of a seamstress, representing the labor strike of the 1920s seamstresses, who fought for fair pay and better working conditions.\n6. The bench is a place to rest, reflect, and engage in a creative moment of solidarity with the seamstresses of the past.\n\n**Trade-off:**\n\nThe seamstress bench is limited to a single medium for engagement (embroidery) and may not be accessible to those with visual or mobility impairments. However, it provides a tactile and creative commemoration that invites passersby to actively participate and engage with history in a unique way.",
+      "rater_question": "Which response is better? Consider novelty, coherence, and constraint-respect.",
+      "rater_choices": [
+        "A is clearly better",
+        "A is slightly better",
+        "B is slightly better",
+        "B is clearly better"
+      ]
+    },
+    {
+      "trial_id": "T11",
+      "pair_id": "steered_vs_baseline",
+      "prompt_id": "des_deep_work_timer",
+      "domain": "design",
+      "prompt_title": "Deep-work timer (hand-sized physical object, no screens/beeps)",
+      "prompt_text": "Design a hand-sized physical object that helps a person commit to a 25-minute focused-work session. Do NOT use beeps, alarms, visible countdowns, or smartphone interaction. Commit to a single design move. Describe the object, what the user experiences at 0 / 13 / 25 / 30 minutes, and the trade-off you accept. About 220 words.",
+      "seed": 42,
+      "ours_position": "B",
+      "a_internal_method": "baseline",
+      "b_internal_method": "steered_L18-23_a0.17",
+      "a_text": "Introducing the **Focus Stone**, a hand-sized, hourglass-shaped object designed to promote focused work sessions. It's a smooth, ergonomic stone with a subtle, soothing hum that emanates from within.\n\n- **0 minutes:** The user holds the Focus Stone and activates it by squeezing gently. The hum starts, barely audible, and the user places it on their desk.\n\n- **13 minutes:** At this point in the session, the hum intensifies slightly, serving as a gentle reminder that the user has completed half the session.\n\n- **25 minutes:** When the time is up, the hum reaches its peak volume, signaling the end of the focused work session. The user can then release the tension and take a break.\n\n- **30 minutes:** The hum subsides and then stops, indicating the break period is over. The user can then repeat the process by squeezing the Focus Stone.\n\nThe trade-off with the Focus Stone is that it requires the user to maintain some self-awareness and self-discipline. There's no harsh alarm or countdown to push the user, but instead, it relies on a subtle sensory cue, making it a more passive reminder to stay focused. This could be more beneficial for those who find beeps and alarms disruptive. The Focus Stone is a simple design that does not use apps, countdowns, or other modern technological distractions, ensuring that the user can focus on the task at hand.",
+      "b_text": "Introducing the **Momentum Pebble**, a hand-sized, organic form factor, designed to facilitate a 25-minute focused work session.\n\nThe Momentum Pebble is a smooth, ergonomic stone-like object, no larger than the user's palm, with a subtle, natural texture. It is crafted from a non-metallic, non-conductive material that supports a simple, sealed internal mechanism. At 0 minutes, the user initiates the session by gently rocking the stone. A concealed, calibrated pendulum within the object begins to swing, invisibly driven by the stone's internal energy source.\n\nAt 13 minutes, the user perceives a subtle, soft, rhythmic vibration, akin to a gentle pulse. This sensation is not intrusive but serves as a perceptual anchor, encouraging the user to maintain focus. The Momentum Pebble's design allows the user to perceive this pulse through touch, rather than other senses, ensuring minimal disruption.\n\nAt 25 minutes, the vibration transitions to a steady, soothing resonance. This transition is subtle but distinct, signaling the completion of the focused work session. Users can learn to interpret this shift through their engagement with the object, with no reliance on explicit instructions or digital feedback.\n\nAt 30 minutes, the resonance fades, and the Momentum Pebble returns to its initial state, ready for the next cycle. The trade-off here is that the Momentum Pebble does not provide explicit time data or enforcement. Instead, it offers a perceptual journey, encouraging the user to cultivate intrinsic temporal awareness and self-discipline.",
+      "rater_question": "Which response is better? Consider novelty, coherence, and constraint-respect.",
+      "rater_choices": [
+        "A is clearly better",
+        "A is slightly better",
+        "B is slightly better",
+        "B is clearly better"
+      ]
+    },
+    {
+      "trial_id": "T12",
+      "pair_id": "steered_vs_baseline",
+      "prompt_id": "des_wedding_seating",
+      "domain": "design",
+      "prompt_title": "Wedding seating for cross-table conversation between strangers",
+      "prompt_text": "Design a seating arrangement for a wedding reception of 60 guests at 6 round tables that encourages cross-table conversation between strangers. Do NOT use assigned seats by family group, icebreaker games, name tags with conversation prompts, or numbered tables. Commit to a single design move. Describe the physical setup, what a guest experiences in their first 10 minutes after sitting down, and the trade-off you accept. About 220 words.",
+      "seed": 42,
+      "ours_position": "B",
+      "a_internal_method": "baseline",
+      "b_internal_method": "steered_L18-23_a0.17",
+      "a_text": "**Design Move: Mixed-height Tables and Stools**\n\n**Physical Setup:**\n\nArrange 6 round tables in a large circle: 3 standard-height tables alternating with 3 high-top tables. Surround each standard-height table with 8 standard chairs and each high-top table with 8 stools. This creates a dynamic layout that encourages guests to interact with those at neighboring tables.\n\n**Guest Experience:**\n\nUpon entering, guests find a vibrant mix of seating options. They are encouraged to choose their seat based on availability and personal preference. The first 10 minutes after sitting down unfold as follows: A guest at a standard-height table might turn to talk to someone at the high-top table next to them about their choice of seat. A person on a stool might chat with someone on a chair about the unique arrangement of the tables. The layout naturally fosters conversations between strangers, as guests at neighboring tables find themselves in close proximity, with the different heights creating a sense of informality and shared curiosity.\n\n**Trade-off:**\n\nThe trade-off is that some guests might feel a bit uneasy if they are seated on a stool and they prefer a regular chair or vice versa. However, the overall benefit of promoting cross-table conversation and a more dynamic atmosphere outweighs this potential discomfort.",
+      "b_text": "**Design Move: Variable Table Sizes and Mixed Seating**\n\n**Physical Setup:**\nArrange six round tables with varying capacities: two tables for 8, two for 9, and two for 11. Place tables in a open layout, avoiding linear or clustered formations. Remove table numbers or identifiers.\n\n**Guest Experience (First 10 Minutes):**\nGuests approach the open layout and choose available seats. The first few guests at each table have a strong incentive to engage their neighbors to fill the remaining seats. Guests are prompted by the open seats to turn to their neighbors, and to those entering the table, with the practical question: \"Would you like to sit here?\" This is a low-stakes exchange that easily flows into more personal inquiries.\n\n**Trade-off:**\nThe variable table sizes may lead to a few moments of mild awkwardness for guests seeking out familiar faces, but these moments encourage interaction with strangers. The open layout and absence of identifiers create a dynamic environment where guests are more likely to engage with their surroundings and nearby strangers.",
+      "rater_question": "Which response is better? Consider novelty, coherence, and constraint-respect.",
+      "rater_choices": [
+        "A is clearly better",
+        "A is slightly better",
+        "B is slightly better",
+        "B is clearly better"
+      ]
+    }
+  ]
+}
